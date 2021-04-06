@@ -9,8 +9,26 @@ def main():
 
     # Submission IDs can be found in the url to your post. They are 6 characters long.
     submission = reddit.submission("Your Submission ID Here")
-    edited_body = f"Number of Comments: {submission.num_comments}, Number of Updoots: {submission.score}, Updoot Ratio: {submission.upvote_ratio}"
+
+    # Sort by most upvoted/downvoted comments.
+    upvoted_submission_comments = sorted(
+        submission.comments, key=lambda x: x.score, reverse=True
+    )
+    downvoted_submission_comments = sorted(submission.comments, key=lambda x: x.score)
+
+    edited_body = f"Number of Comments: {submission.num_comments} \n\n Number of Updoots: {submission.score} \n\n Updoot Ratio: {submission.upvote_ratio} \n\n The 5 Most Upvoted Comments:\n\n"
+
+    for comment in upvoted_submission_comments[0:5]:
+        edited_body = edited_body + f"'{comment.body}',\n\n"
+
+    edited_body = edited_body + "The 5 Most Downvoted Comments: \n\n"
+    for comment in downvoted_submission_comments[0:5]:
+        edited_body = edited_body + f"'{comment.body}',\n\n"
+
+    # Update body of submission.
     submission.edit(edited_body)
+
+    print(submission.comments.list())
 
 
 if __name__ == "__main__":
