@@ -3,7 +3,7 @@ import json
 import praw
 
 sleep_interval = 15
-submssion_id = "PLEASE UPDATE ME"
+submssion_id = "mlmx1k"
 
 
 def main():
@@ -28,8 +28,6 @@ def main():
 
     # Update body of submission.
     submission.edit(edited_body)
-
-    print(submission.comments.list())
 
 
 if __name__ == "__main__":
@@ -63,8 +61,8 @@ if __name__ == "__main__":
 
     # Infiite loop that edits our Reddit submission every sleep_interval seconds.
     # Be careful not to get throttled by Reddit.
+    i = 0
     while True:
-        i = 0
         print(f"editing run {i}...")
         i = i + 1
         main()
