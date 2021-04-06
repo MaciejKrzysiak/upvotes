@@ -20,9 +20,13 @@ $> cd upvotes
 ```
 
 Once downloaded and inside the upvotes directory, update super_secret.json to use your credentials. 
+
 A personal client_id and client_secret can be created here: [Reddit Dev](https://www.reddit.com/prefs/apps). 
+
 The username and password fields correspond to your Reddit account information. 
+
 The user_agent field is a way to name your program. Give it an informative name. 
+
 Once you've updated the secret fields, update the submission_id in upvotes.py. 
 The submission id refers to the literal Reddit post you want to turn live. 
 This id can be found in the url of the post. It's about 5 characters long.
