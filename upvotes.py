@@ -3,12 +3,13 @@ import json
 import praw
 
 sleep_interval = 15
+submssion_id = "PLEASE UPDATE ME"
 
 
 def main():
 
     # Submission IDs can be found in the url to your post. They are 6 characters long.
-    submission = reddit.submission("Your Submission ID Here")
+    submission = reddit.submission(submssion_id)
 
     # Sort by most upvoted/downvoted comments.
     upvoted_submission_comments = sorted(
