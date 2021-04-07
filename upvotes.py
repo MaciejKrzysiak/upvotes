@@ -3,7 +3,7 @@ import json
 import praw
 
 sleep_interval = 15
-submssion_id = "mlmx1k"
+submssion_id = "submission id goes here"
 
 
 def main():
